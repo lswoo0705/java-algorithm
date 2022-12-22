@@ -1,4 +1,4 @@
-package algorithm.programmers;
+package algorithm.programmers.Test_01to20;
 
 public class Test_07_LengthOfArrayElements {
     public int[] solution(String[] strlist) {

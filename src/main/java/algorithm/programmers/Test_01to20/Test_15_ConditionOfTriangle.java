@@ -1,4 +1,4 @@
-package algorithm.programmers;
+package algorithm.programmers.Test_01to20;
 
 public class Test_15_ConditionOfTriangle {
     public int solution(int[] sides) {

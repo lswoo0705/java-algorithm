@@ -1,4 +1,4 @@
-package algorithm.programmers;
+package algorithm.programmers.Test_01to20;
 
 public class Test_10_SplitPizza {
     public int solution(int slice, int n) {

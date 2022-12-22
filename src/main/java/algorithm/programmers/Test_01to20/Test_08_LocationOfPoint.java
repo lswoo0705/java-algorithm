@@ -1,4 +1,4 @@
-package algorithm.programmers;
+package algorithm.programmers.Test_01to20;
 
 public class Test_08_LocationOfPoint {
     public int solution(int[] dot) {
