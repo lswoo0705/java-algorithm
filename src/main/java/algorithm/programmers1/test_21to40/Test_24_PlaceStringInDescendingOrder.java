@@ -1,4 +1,4 @@
-package algorithm.programmers1.test_01to20;
+package algorithm.programmers1.test_21to40;
 
 import java.util.Arrays;
 import java.util.Comparator;

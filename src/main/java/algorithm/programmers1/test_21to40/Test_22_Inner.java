@@ -1,4 +1,4 @@
-package algorithm.programmers1.test_01to20;
+package algorithm.programmers1.test_21to40;
 
 public class Test_22_Inner {
     public int solution(int[] a, int[] b) {
