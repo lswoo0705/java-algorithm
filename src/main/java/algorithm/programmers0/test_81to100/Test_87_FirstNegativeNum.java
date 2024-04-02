@@ -7,7 +7,7 @@ public class Test_87_FirstNegativeNum {
                 return i;
             }
         }
-        
+
         return -1;
     }
 }
