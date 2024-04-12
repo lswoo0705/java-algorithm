@@ -42,7 +42,7 @@ public class Test_11_EnglishWordChain {
 //        return answer;
 
         int[] answer = new int[2];
-        
+
         for(int i=1;i<words.length;i++){
             // ch1 - 현재 단어의 첫 글자, ch2 - 이전 단어의 마지막 글자
             char ch1 = words[i].charAt(0);
