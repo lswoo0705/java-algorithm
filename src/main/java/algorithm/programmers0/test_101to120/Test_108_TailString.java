@@ -11,7 +11,7 @@ public class Test_108_TailString {
                 answer.append(s);
             }
         }
-        
+
         return answer.toString();
     }
 }
