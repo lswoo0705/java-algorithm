@@ -11,7 +11,7 @@ public class Test_122_ReplaceStringWithCapital {
                 answer.append(my_string.charAt(i));
             }
         }
-        
+
         return answer.toString();
     }
 }
