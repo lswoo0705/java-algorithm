@@ -68,12 +68,25 @@ public class Basic {
         System.out.println("5번 : " + answer5);
 
         // 6. 밀라노에 거래자가 있는가?
-        // CODE
+        boolean answer6 = transactions.stream()
+                .anyMatch(t -> t.getTrader().getCITY().equals("Milan"));
+
+        System.out.println("6번 : " + answer6);
 
         // 7. 케임브리지에 거주하는 거래자의 모든 트랜잭션 값을 출력하시오.
-        // CODE
+        List<Integer> answer7 = transactions.stream()
+                .filter(t -> t.getTrader().getCITY().equals("Cambridge"))
+                .map(Transaction::getValue)
+                .collect(Collectors.toList());
+
+        System.out.println("7번 : " + answer7);
+
 
         // 8. 전체 트랜잭션 중 최댓값은 얼마인가?
-        // CODE
+        Integer answer8 = transactions.stream()
+                .map(Transaction::getValue)
+                .reduce(0, Integer::max);
+
+        System.out.println("8번 : " + answer8);
     }
 }
