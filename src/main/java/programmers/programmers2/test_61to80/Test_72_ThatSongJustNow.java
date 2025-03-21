@@ -32,7 +32,8 @@ public class Test_72_ThatSongJustNow {
                 .replace("D#", "I")
                 .replace("F#", "J")
                 .replace("G#", "K")
-                .replace("A#", "L");
+                .replace("A#", "L")
+                .replace("B#", "M");
     }
 
     // 재생 시간 계산
