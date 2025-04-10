@@ -11,7 +11,7 @@ public class Test_81_MineCraft {
 
         int answer = 0;
 
-        // 1.리스트를 만들어서 광물 5개 씩 넣기
+        // 1. 광물을 5개씩 묶어서 그룹 생성
         List<List<String>> mineralGroups = new ArrayList<>();
         for (int i = 0; i < minerals.length; i += 5) {
             List<String> group = new ArrayList<>();
@@ -21,39 +21,41 @@ public class Test_81_MineCraft {
             mineralGroups.add(group);
         }
 
-        // 2.묶음별로 피로도를 계산
-        List<int[]> fatigueGroups = new ArrayList<>();
-        for (List<String> group : mineralGroups) {
-            // 각 피로도
-            int diamondFatigue = 0;
-            int ironFatigue = 0;
-            int stoneFatigue = 0;
+        // 2. 사용할 수 있는 곡괭이 수 만큼만 그룹 고려
+        int totalPicks = picks[0] + picks[1] + picks[2];
+        int maxGroups = Math.min(totalPicks, mineralGroups.size());
 
-            for (String n : group) {
-                switch (n) {
+        // 3. 그룹당 피로도 계산
+        List<int[]> fatigueGroups = new ArrayList<>();
+        for (int i = 0; i < maxGroups; i++) {
+            List<String> group = mineralGroups.get(i);
+            int dia = 0, iron = 0, stone = 0;
+            for (String m : group) {
+                switch (m) {
                     case "diamond" -> {
-                        diamondFatigue += 1;
-                        ironFatigue += 5;
-                        stoneFatigue += 25;
+                        dia += 1;
+                        iron += 5;
+                        stone += 25;
                     }
                     case "iron" -> {
-                        diamondFatigue += 1;
-                        ironFatigue += 1;
-                        stoneFatigue += 5;
+                        dia += 1;
+                        iron += 1;
+                        stone += 5;
                     }
                     case "stone" -> {
-                        diamondFatigue += 1;
-                        ironFatigue += 1;
-                        stoneFatigue += 1;
+                        dia += 1;
+                        iron += 1;
+                        stone += 1;
                     }
                 }
             }
-            fatigueGroups.add(new int[]{diamondFatigue, ironFatigue, stoneFatigue});
+            fatigueGroups.add(new int[]{dia, iron, stone});
         }
 
-        // 3.곡괭이를 피로도가 높은 순으로 할당해서 계산
+        // 4. stone 기준으로 피로도가 높은 순서대로 정렬
         fatigueGroups.sort((a, b) -> b[2] - a[2]);
 
+        // 5. 곡괭이를 사용해서 피로도 누적
         int index = 0;
 
         for (int i = 0; i < picks[0]; i++) { // 다이아 곡괭이
