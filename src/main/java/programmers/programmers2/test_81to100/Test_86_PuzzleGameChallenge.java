@@ -13,12 +13,7 @@ public class Test_86_PuzzleGameChallenge { // 퍼즐 게임 챌린지
 
         int answer = 0;
         int left = 1;
-        int right = diffs[0];
-        for (int diff : diffs) {
-            if (diff > right) {
-                right = diff;
-            }
-        }
+        int right = getMax(diffs);
 
         while (left <= right) {
             int middle = (left + right) / 2;
@@ -35,6 +30,15 @@ public class Test_86_PuzzleGameChallenge { // 퍼즐 게임 챌린지
         return answer;
     }
 
+    // 최대값 구하는 과정을 메서드로 따로 빼기
+    private int getMax(int[] arr) {
+        int max = arr[0];
+        for (int n : arr) {
+            if (n > max) max = n;
+        }
+        return max;
+    }
+
     private long getTotalTime(int[] diffs, int[] times, int middle) {
         long totalTime = 0;
 
@@ -43,12 +47,7 @@ public class Test_86_PuzzleGameChallenge { // 퍼즐 게임 챌린지
                 totalTime += times[i];
             } else {
                 int failedCount = diffs[i] - middle;
-                int timePrev = 0;
-                if (i == 0) {
-                    timePrev = 0;
-                } else {
-                    timePrev = times[i - 1];
-                }
+                int timePrev = (i == 0) ? 0 : times[i - 1]; // 3항 연산자 사용
                 totalTime += (long) failedCount * (times[i] + timePrev) + times[i];
             }
         }
