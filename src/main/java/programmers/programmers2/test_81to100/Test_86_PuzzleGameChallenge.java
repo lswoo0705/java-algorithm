@@ -22,7 +22,7 @@ public class Test_86_PuzzleGameChallenge { // 퍼즐 게임 챌린지
 
         while (left <= right) {
             int middle = (left + right) / 2;
-            int totalTimes = getTotalTime(diffs, times, middle);
+            long totalTimes = getTotalTime(diffs, times, middle);
 
             if (totalTimes <= limit) {
                 answer = middle;
@@ -35,8 +35,8 @@ public class Test_86_PuzzleGameChallenge { // 퍼즐 게임 챌린지
         return answer;
     }
 
-    private int getTotalTime(int[] diffs, int[] times, int middle) {
-        int totalTime = 0;
+    private long getTotalTime(int[] diffs, int[] times, int middle) {
+        long totalTime = 0;
 
         for (int i = 0; i < diffs.length; i++) {
             if (diffs[i] <= middle) {
@@ -49,7 +49,7 @@ public class Test_86_PuzzleGameChallenge { // 퍼즐 게임 챌린지
                 } else {
                     timePrev = times[i - 1];
                 }
-                totalTime += failedCount * (times[i] + timePrev) + times[i];
+                totalTime += (long) failedCount * (times[i] + timePrev) + times[i];
             }
         }
 
