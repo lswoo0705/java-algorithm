@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class Test_01_APlusBMinus4 {
+public class Test_01_APlusB4 {
     static int stoi(String s) {
         return Integer.parseInt(s);
     }
