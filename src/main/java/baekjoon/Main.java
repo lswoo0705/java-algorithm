@@ -9,7 +9,7 @@ public class Main {
     static int N;
 
     // 문자열을 정수로
-    static int stoi(String s) {
+    static int toInt(String s) {
         return Integer.parseInt(s);
     }
 
@@ -19,6 +19,6 @@ public class Main {
         // 문제에서 주어진 문자열을 토큰으로 나눈 문자열
         StringTokenizer st = new StringTokenizer(br.readLine());
         // 첫 토큰의 정수형
-        N = stoi(st.nextToken());
+        N = toInt(st.nextToken());
     }
 }
